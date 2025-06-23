@@ -11,10 +11,13 @@ import Button from "./components/button";
 import ButtonIcon from "./components/button-icon";
 import InputVariants from "./components/input-text";
 import InputCheckbox from "./components/input-checkbox";
+import Card from "./components/card";
+import Container from "./components/container";
 
 export default function App() {
   return (
-    <div className="grid gap-10 p-5">
+    <Container>
+    <div className="grid gap-10 ">
       <div className="flex flex-col gap-2">
         <Text variant="body-sm-bold" className="text-pink-base">
           Olá mundo
@@ -26,10 +29,10 @@ export default function App() {
       </div>
 
       <div className="flex gap-1">
-        <Icon svg={TrashIcon} className="bg-pink-base"/>
+        <Icon svg={TrashIcon} className="bg-pink-base" />
         <Icon svg={CheckIcon} />
         <Icon svg={PlusIcon} />
-        <Icon svg={SpinnerIcon} animate className="bg-green-base" />
+        <Icon svg={SpinnerIcon} animate />
         <Icon svg={PencilIcon} />
         <Icon svg={XIcon} />
       </div>
@@ -44,17 +47,25 @@ export default function App() {
 
       <div className="flex gap-2">
         <ButtonIcon icon={TrashIcon} />
-        <ButtonIcon icon={TrashIcon} variant={"secondary"}/>
-        <ButtonIcon icon={TrashIcon} variant={"tertiary"}/> 
+        <ButtonIcon icon={TrashIcon} variant={"secondary"} />
+        <ButtonIcon icon={TrashIcon} variant={"tertiary"} />
       </div>
 
       <div>
-        <InputVariants/>
+        <InputVariants />
       </div>
 
       <div>
-        <InputCheckbox/>
+        <InputCheckbox />
+      </div>
+
+      <div>
+        <Card size="md">
+          <InputCheckbox />
+          <InputVariants />
+        </Card>
       </div>
     </div>
+    </Container>
   );
 }
